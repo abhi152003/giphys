@@ -71,6 +71,11 @@ export default function Home() {
 
   const [favoriteGifs, setFavoriteGifs] = useState([]);
 
+  useEffect(() => {
+    const storedFavoriteGifs = fetchFavoriteGifs();
+    setFavoriteGifs(storedFavoriteGifs);
+  }, []);
+
   const isFavorite = (gifId) => {
     return favoriteGifs.includes(gifId);
   };
@@ -120,12 +125,6 @@ export default function Home() {
     return [];
   };
 
-  useEffect(() => {
-    const storedFavoriteGifs = fetchFavoriteGifs();
-    setFavoriteGifs(storedFavoriteGifs);
-  }, []);
-
-  
   const favoriteGifsFromStorage = fetchFavoriteGifs();
 
   return (
@@ -185,12 +184,14 @@ export default function Home() {
         <div className={styles.favoritesSection}>
           <h2>Favorites</h2>
           {favoriteGifsFromStorage.map((gif) => (
-            <img
-              key={gif.id}
-              src={gif.images.fixed_height.url}
-              alt={gif.title}
-              className={styles.gif}
-            />
+            gif && gif.images && gif.images.fixed_height && (
+              <img
+                key={gif.id}
+                src={gif.images.fixed_height.url}
+                alt={gif.title}
+                className={styles.gif}
+              />
+            )
           ))}
         </div>
       )}
