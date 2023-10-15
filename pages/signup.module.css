@@ -1,0 +1,59 @@
+.container {
+  margin-top: 40px;
+  display: flex;
+  padding: 24px;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+}
+  
+.container h1 {
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+.container input {
+  width: 300px;
+  margin-bottom: 15px;
+  padding: 10px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.container button {
+  width: 300px;
+  padding: 12px;
+  font-size: 18px;
+  background-color: #4caf50;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.container button:hover {
+  background-color: #45a049;
+}
+
+.error {
+  color: #ff0000;
+  margin-bottom: 15px;
+}
+
+.loginLink {
+  margin-top: 20px;
+  text-align: center;
+}
+
+.loginLink a {
+  color: #4caf50;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.loginLink a:hover {
+  text-decoration: underline;
+}
